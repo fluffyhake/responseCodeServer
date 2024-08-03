@@ -19,7 +19,7 @@ app.get("*", (req: Request, res: Response) => {
 
 
     const min = 1;
-    const max = 6000;
+    const max = 600;
     const random = Math.floor(Math.random() * (max - min + 1)) + min;
     // Reset counter after reaching 10
 
@@ -33,6 +33,8 @@ app.get("*", (req: Request, res: Response) => {
         res.setHeader("Location", req.url + "/")
         res.send()
 
+    }else if (random === 5 || random === 6 || random === 7 || random === 8){
+        console.log("hanging connection to cause more errors")
     }
     else{
         res.status(404).send()

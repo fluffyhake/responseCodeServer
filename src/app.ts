@@ -33,8 +33,12 @@ app.get("*", (req: Request, res: Response) => {
         res.setHeader("Location", req.url + "/")
         res.send()
 
-    }else if (random === 5 || random === 6 || random === 7 || random === 8){
+    }else if (random === 5){
         console.log("hanging connection to cause more errors")
+    }else if(random === 6){
+        res?.socket?.destroy()
+    }else if(random === 7 || random === 8){
+        res.setHeader("Connection", "close").send()
     }
     else{
         res.status(404).send()

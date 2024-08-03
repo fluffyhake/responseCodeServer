@@ -6,7 +6,7 @@ import fs from 'fs';
 import path from 'path';
 
 const app: Express = express();
-const port = 3000;
+const port = 3001;
 let counter: number = 0
 
 
@@ -51,6 +51,6 @@ const httpsServer = https.createServer({
   }, app);
   
   httpsServer
-   .listen(3000, () => {
-      console.log('Server listening on port 3000. URL: https://localhost:3000');
+   .listen(3001, () => {
+      console.log('Server listening on port 3001. URL: https://localhost:3001');
     });
